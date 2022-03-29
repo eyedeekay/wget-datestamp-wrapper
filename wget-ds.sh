@@ -19,7 +19,7 @@ if [ -z "$FILE" ]; then
 fi
 
 # use wget to collect the date stamp
-UPSTREAM_DATE=$(wget --spider -S "$URL" 2>&1 | grep Last-Modified | sed 's/^.*: //')
+UPSTREAM_DATE=$(wget -q --spider -S "$URL" 2>&1 | grep Last-Modified | sed 's/^.*: //')
 
 UNIVERSAL_UPSTREAM_DATE=$(date -u -d "$UPSTREAM_DATE" +%Y%m%d%H%M%S)
 
